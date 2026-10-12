@@ -1,0 +1,23 @@
+# Optional one-click setup for Render (Dashboard > New > Blueprint).
+# You will be asked for the three secrets below when you create it.
+services:
+  - type: web
+    name: census-app
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AUTO_SETUP
+        value: "true"
+      - key: DB_SSL
+        value: "true"
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DEMO_PASSWORD
+        sync: false
