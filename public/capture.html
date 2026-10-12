@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#145a32" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Capture — Bauchi Census Collector</title>
+</head>
+<body>
+  <header id="topbar" class="topbar"></header>
+
+  <main>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+      <div id="queue-summary"><strong>0</strong> pending sync · <strong>0</strong> needs attention</div>
+      <button class="secondary" id="sync-now-btn">Sync now</button>
+    </div>
+
+    <div id="save-banner" class="banner warning" style="display:none;"></div>
+
+    <div id="rejected-card" class="card" style="display:none;">
+      <h3 style="margin-top:0;">Needs attention</h3>
+      <div id="rejected-list"></div>
+    </div>
+
+    <form class="card" id="capture-form">
+      <h2 style="margin-top:0;">New household</h2>
+
+      <div id="issues-banner" class="banner danger" style="display:none;">
+        <strong>Fix before saving:</strong>
+        <ul class="issue-list" id="issues-list"></ul>
+      </div>
+      <div id="boundary-banner" class="banner warning" style="display:none;">
+        This GPS point falls outside the assigned enumeration area boundary. You can still save —
+        this will be flagged for supervisor review.
+      </div>
+      <div id="duplicate-banner" class="banner warning" style="display:none;">
+        A household with this head name is already in your queue nearby — check it isn't a duplicate.
+      </div>
+
+      <label for="headFullName">Head of household — full name</label>
+      <input id="headFullName" />
+
+      <label for="address">Address</label>
+      <input id="address" />
+
+      <label>GPS location</label>
+      <div style="display:flex; gap:0.5rem; align-items:center;">
+        <button type="button" class="secondary" id="gps-btn">Capture GPS</button>
+        <span id="gps-status" style="font-size:0.85rem; color:var(--color-text-muted);">Not captured yet</span>
+      </div>
+
+      <h3 style="margin-top:1.25rem;">Household members</h3>
+      <div id="members-container"></div>
+      <button type="button" class="secondary" style="margin-top:0.75rem;" id="add-member-btn">+ Add member</button>
+
+      <div style="margin-top:1.5rem;">
+        <button type="submit">Save household</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/geo.js"></script>
+  <script src="/js/validation.js"></script>
+  <script src="/js/queueStatus.js"></script>
+  <script src="/js/sync.js"></script>
+  <script src="/js/topbar.js"></script>
+  <script src="/js/register-sw.js"></script>
+  <script src="/js/pages/capture.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "Bauchi Census Collector",
+  "short_name": "CensusApp",
+  "description": "Offline-capable census data collection and review",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#145a32",
+  "background_color": "#ffffff",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#145a32" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Users — Bauchi Census Collector</title>
+</head>
+<body>
+  <header id="topbar" class="topbar"></header>
+
+  <main>
+    <form class="card" id="create-user-form">
+      <h2 style="margin-top:0;">Add user</h2>
+      <div id="error-banner" class="banner danger" style="display:none;"></div>
+
+      <label for="username">Username</label>
+      <input id="username" />
+
+      <label for="password">Temporary password</label>
+      <input id="password" type="password" />
+
+      <label for="fullName">Full name</label>
+      <input id="fullName" />
+
+      <label for="role">Role</label>
+      <select id="role">
+        <option value="enumerator">Enumerator</option>
+        <option value="supervisor">Supervisor</option>
+        <option value="administrator">Administrator</option>
+      </select>
+
+      <label for="censusCentreId">Census centre ID</label>
+      <input id="censusCentreId" />
+
+      <div id="ea-field">
+        <label for="enumerationAreaId">Enumeration area ID</label>
+        <input id="enumerationAreaId" />
+      </div>
+
+      <button type="submit" id="submit-btn" style="margin-top:1.25rem;">Create user</button>
+    </form>
+
+    <div class="card">
+      <h3 style="margin-top:0;">Users</h3>
+      <table>
+        <thead><tr><th>Username</th><th>Name</th><th>Role</th><th>Active</th></tr></thead>
+        <tbody id="user-rows"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/queueStatus.js"></script>
+  <script src="/js/sync.js"></script>
+  <script src="/js/topbar.js"></script>
+  <script src="/js/register-sw.js"></script>
+  <script src="/js/pages/admin-users.js"></script>
+</body>
+</html>

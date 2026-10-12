@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bauchi Census Collector</title>
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+  <script>
+    const user = getUser();
+    window.location.replace(user ? homeForRole(user.role) : '/login.html');
+  </script>
+</body>
+</html>

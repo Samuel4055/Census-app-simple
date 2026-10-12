@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#145a32" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Sign in — Bauchi Census Collector</title>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="card">
+      <h2 style="margin-top:0;">Census Collector — Sign in</h2>
+      <div id="offline-banner" class="banner warning" style="display:none;">
+        You're offline. Sign-in needs a connection the first time on this device.
+      </div>
+      <div id="error-banner" class="banner danger" style="display:none;"></div>
+
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input id="username" autofocus />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" />
+
+        <button type="submit" id="submit-btn" style="margin-top:1.25rem; width:100%;">Sign in</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/register-sw.js"></script>
+  <script src="/js/pages/login.js"></script>
+</body>
+</html>

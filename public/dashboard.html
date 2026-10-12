@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#145a32" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+  <title>Dashboard — Bauchi Census Collector</title>
+</head>
+<body>
+  <header id="topbar" class="topbar"></header>
+
+  <main>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="margin:0;">Household review</h2>
+      <select id="status-filter" style="width:200px;">
+        <option value="">All statuses</option>
+        <option value="synced">Pending review</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <div class="map-wrap" id="map"></div>
+    </div>
+
+    <div class="card">
+      <table>
+        <thead>
+          <tr><th>Head of household</th><th>Enumeration area</th><th>Status</th><th>Flags</th><th>Captured</th></tr>
+        </thead>
+        <tbody id="household-rows"></tbody>
+      </table>
+    </div>
+
+    <div class="card" id="detail-card" style="display:none;"></div>
+  </main>
+
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/queueStatus.js"></script>
+  <script src="/js/sync.js"></script>
+  <script src="/js/topbar.js"></script>
+  <script src="/js/register-sw.js"></script>
+  <script src="/js/pages/dashboard.js"></script>
+</body>
+</html>
